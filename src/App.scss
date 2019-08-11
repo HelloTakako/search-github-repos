@@ -1,0 +1,36 @@
+html{
+    font-size: 62.5%;
+}
+body{
+    padding: 10px;
+    background-color: #eee;
+}
+input {
+    width: 90%;
+    padding: 5px;
+    font-size: 1.8rem;
+    border: none;
+    background-color: #fff;
+    color: #666;
+    border-radius: 5px;
+}
+h2{
+    font-size: 2rem;
+}
+.resultsCount{
+    font-size: 1.5rem;
+       color: red; 
+}
+ul {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 1.6rem;
+}
+li{
+    list-style: none;
+    margin-bottom: 10px;
+}
+button{
+    margin-right: 10px;
+}

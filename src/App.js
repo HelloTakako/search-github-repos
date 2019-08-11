@@ -3,6 +3,8 @@ import { ApolloProvider, Mutation, Query } from 'react-apollo';
 import client from './client';
 import { ADD_STAR, REMOVE_STAR, SEARCH_REPOSITORIES } from './graphql';
 
+import './App.scss';
+
 const StarButton = props => {
   const { node, query, first, last, before, after } = props;
   const totalCount = props.node.stargazers.totalCount;
@@ -90,6 +92,7 @@ class App extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <input value={query} onChange={this.handleChange} />
       </form>
+
         <Query 
         query={SEARCH_REPOSITORIES}
         variables={{ query, first, last, before, after }}
@@ -102,11 +105,12 @@ class App extends React.Component {
             const search = data.search
             const repositoryCount = search.repositoryCount
             const repositoryUnit = repositoryCount === 1 ? 'Repository' : 'Repositories'
-            const title = `Github Repositories Search Results: ${repositoryCount} ${repositoryUnit}`
+            const resultsCount = ` Results: ${repositoryCount} ${repositoryUnit}`
             
             return (
               <React.Fragment>
-                <h2>{title}</h2>
+                <h2>Github Repositories Search</h2>
+                <p className="resultsCount">{resultsCount}</p>
                 <ul>
                   {
                     search.edges.map(edge => {
